@@ -1,7 +1,7 @@
 import path from 'path'
 
 export function determineFullInput(cliInputPath){
-    const basePath = __dirname.substring(0, __dirname.lastIndexOf('/'));
+    const basePath = path.join(__dirname, '../../').substring(0, __dirname.lastIndexOf('/'));
     return path.join(basePath, cliInputPath)
 }
 

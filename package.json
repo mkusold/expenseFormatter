@@ -4,7 +4,7 @@
   "description": "formats mint transaction downloads and removes unecessary entries to be used in calculating monthly expenses",
   "main": "main.js",
   "scripts": {
-    "start": "node -r esm main.js",
+    "start": "node -r esm src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
