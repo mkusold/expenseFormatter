@@ -1,8 +1,10 @@
 import path from 'path'
 
 export function determineFullInput(cliInputPath){
-    const basePath = __dirname.substring(0, __dirname.lastIndexOf('/'));
-    return path.join(basePath, cliInputPath)
+    const basePath = path.join(__dirname, '../../').substring(0, __dirname.lastIndexOf('/'));
+    const fullInputPath = path.join(basePath, cliInputPath)
+    console.log('full input', fullInputPath)
+    return fullInputPath
 }
 
 export function determineFullOutput(data, outputPath){

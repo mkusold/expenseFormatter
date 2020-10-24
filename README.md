@@ -4,8 +4,11 @@ This is a helper tool that pairs with the FIRE ["One Spreadsheet to Rule them Al
 
 In the spreadsheet, there's a tab that connects to Mint and downloads transactions for a set time period (you can also do this through the Mint API directly). This script helps automatically parse the Mint transactions and formats them so that you can use them in the spreadsheet to calculate monthly expenses.
 
-
-# Dev setup
+## Dev setup
 
 `npm install`
 `npm start`
+
+## Building the Executable
+
+`npm run build`
