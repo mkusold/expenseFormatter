@@ -1,10 +1,17 @@
 export default function formatValues(eliminatedCategories, transactions){
     // delete entries with the blacklisted categories
-    const cleanedTransactions = transactions.filter((transaction) => {
+    const cleanedTransactions = [];
+    const removedTransactions = [];
+    for(let i=0; i<transactions.length; i++){
+        const transaction = transactions[i];
         const isMatch = eliminatedCategories.includes(transaction.Category.toLowerCase())
-        return !isMatch
-    })
-    console.log(`Removed ${transactions.length - cleanedTransactions.length} entries`)
+        if(isMatch){
+            removedTransactions.push(transaction);
+        } else {
+            cleanedTransactions.push(transaction);
+        }
+    }
+    console.log(`Removed ${removedTransactions.length} entries`)
 
     // reverse the cost values for remaining credited items
     const creditedTransactions = cleanedTransactions.map((transaction) => {
@@ -15,5 +22,8 @@ export default function formatValues(eliminatedCategories, transactions){
             }
             : transaction
     })
-    return creditedTransactions
+    return {
+        validTransactions: creditedTransactions,
+        removedTransactions,
+    }
 }

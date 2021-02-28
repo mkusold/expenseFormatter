@@ -7,7 +7,11 @@ const defaultCategoryOptions = [
     'Paycheck',
     'Credit Card Payment',
     'Interest Income',
-    'Transfer'
+    'Transfer',
+    'Bonus',
+    'Income',
+    'Financial',
+    'Duplicate',
 ]
 
 const questions = [

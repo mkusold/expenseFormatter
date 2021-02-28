@@ -4,6 +4,11 @@ import formatValues from './formatter'
 import readCSV from './csvReader'
 import writeCSV from './csvWriter'
 
+function writeDataOut(data, outputPath, isRemoved=false){
+    const completeOutputPath = determineFullOutput(data, outputPath, isRemoved)
+    writeCSV(completeOutputPath, data)
+}
+
 async function main(){
     const {
         eliminatedCategories: originalEliminatedCategories,
@@ -16,10 +21,10 @@ async function main(){
     const completeInputPath = determineFullInput(inputPath)
 
     const csvData = await readCSV(completeInputPath)
-    const cleanedData = formatValues(eliminatedCategories, csvData)
+    const { validTransactions: cleanedData, removedTransactions } = formatValues(eliminatedCategories, csvData)
 
-    const completeOutputPath = determineFullOutput(cleanedData, outputPath)
-    writeCSV(completeOutputPath, cleanedData)
+    writeDataOut(cleanedData, outputPath)
+    writeDataOut(removedTransactions, outputPath, true)
 }
 
 main()
