@@ -1,8 +1,13 @@
-import path from 'path'
+import path from 'path';
+import fs from 'fs';
 
 export function determineFullInput(cliInputPath){
-    const basePath = path.join(__dirname, '../../').substring(0, __dirname.lastIndexOf('/'));
-    return path.join(basePath, cliInputPath)
+    const basePath = path.join(__dirname, '..').substring(0, __dirname.lastIndexOf('/'));
+    const inputPath = path.join(basePath, './data', cliInputPath);
+    if(!fs.existsSync(inputPath)){
+        console.log(`Input file could not be found at: ${inputPath}`);
+    }
+    return inputPath;
 }
 
 export function determineFullOutput(data, outputPath, isRemoved=false){

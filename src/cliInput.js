@@ -27,13 +27,13 @@ const questions = [
         type: 'filePath',
         name: 'inputPath',
         message: `Select the input CSV transactions file. >>> `,
-        basePath: '..',
+        basePath: './data',
     },
     {
         type: 'directory',
         name: 'outputPath',
         message: `Select where you want the resulting CSV to go. >>> `,
-        basePath: '..',
+        basePath: './data',
     },
 ];
 

@@ -1,7 +1,7 @@
 {
   "name": "expenseformatter",
   "version": "1.0.0",
-  "description": "formats mint transaction downloads and removes unecessary entries to be used in calculating monthly expenses",
+  "description": "formats mint transaction downloads and removes unnecessary entries to be used in calculating monthly expenses",
   "main": "main.js",
   "scripts": {
     "start": "node -r esm src/main.js",
