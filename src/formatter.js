@@ -13,17 +13,8 @@ export default function formatValues(eliminatedCategories, transactions){
     }
     console.log(`Removed ${removedTransactions.length} entries`)
 
-    // reverse the cost values for remaining credited items
-    const creditedTransactions = cleanedTransactions.map((transaction) => {
-        return (transaction['Transaction Type'].toLowerCase() === 'credit') ? 
-            {
-                ...transaction,
-                Amount: `-${transaction.Amount}`,
-            }
-            : transaction
-    })
     return {
-        validTransactions: creditedTransactions,
+        validTransactions: cleanedTransactions,
         removedTransactions,
     }
 }

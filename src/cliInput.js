@@ -4,7 +4,14 @@ registerPrompt('filePath', require('inquirer-file-path'))
 registerPrompt('directory', require('inquirer-select-directory'))
 
 const defaultCategoryOptions = [
+    // personal capital
+    'Paychecks/Salary',
+    'Interest',
     'Paycheck',
+    'Transfers',
+    'Credit Card Payments',
+    'Refunds & Reimbursements',
+    // mint based ones
     'Credit Card Payment',
     'Interest Income',
     'Transfer',
