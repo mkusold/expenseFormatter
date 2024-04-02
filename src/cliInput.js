@@ -11,6 +11,7 @@ const defaultCategoryOptions = [
     'Transfers',
     'Credit Card Payments',
     'Refunds & Reimbursements',
+    'Investment Income',
     // mint based ones
     'Credit Card Payment',
     'Interest Income',
