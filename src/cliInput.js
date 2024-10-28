@@ -12,6 +12,7 @@ const defaultCategoryOptions = [
     'Credit Card Payments',
     'Refunds & Reimbursements',
     'Investment Income',
+    'Securities Trades', // Vanguard Auto Deposit
     // mint based ones
     'Credit Card Payment',
     'Interest Income',
