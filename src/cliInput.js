@@ -1,27 +1,9 @@
 import { prompt, registerPrompt } from 'inquirer'
+import { DEFAULT_CATEGORY_OPTIONS } from './constants';
 
 registerPrompt('filePath', require('inquirer-file-path'))
 registerPrompt('directory', require('inquirer-select-directory'))
 
-const defaultCategoryOptions = [
-    // personal capital
-    'Paychecks/Salary',
-    'Interest',
-    'Paycheck',
-    'Transfers',
-    'Credit Card Payments',
-    'Refunds & Reimbursements',
-    'Investment Income',
-    'Securities Trades', // Vanguard Auto Deposit
-    // mint based ones
-    'Credit Card Payment',
-    'Interest Income',
-    'Transfer',
-    'Bonus',
-    'Income',
-    'Financial',
-    'Duplicate',
-]
 
 const questions = [
     { 
@@ -29,8 +11,8 @@ const questions = [
         name: 'eliminatedCategories',
         message: 'Select the categories you want eliminated',
         suffix: '[All are selected by default. Hit Enter to confirm selection.]',
-        choices: defaultCategoryOptions,
-        default: defaultCategoryOptions,
+        choices: DEFAULT_CATEGORY_OPTIONS,
+        default: DEFAULT_CATEGORY_OPTIONS,
     },
     {
         type: 'filePath',
